@@ -13,9 +13,8 @@ def handle_call():
 def get_fact():
     return "Hey!! I'm the fact you got!!!"
 
-@app.route('/test', methods=['POST'])
-def test():
-    array = request.form.get('array')
+@app.route('/test/<array>', methods=['POST'])
+def test(array):
     return array
 
 
