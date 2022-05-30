@@ -13,9 +13,11 @@ def handle_call():
 def get_fact():
     return "Hey!! I'm the fact you got!!!"
 
-@app.route('/test/<array>', methods=['POST'])
-def test(array):
-    return array
+@app.route('/test', methods=['POST'])
+def test():
+    json_string=request.get_json()
+    print("JSON String "+str(json_string))
+    return str(json_string)
 
 
 if __name__ == '__main__':
