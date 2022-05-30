@@ -1,19 +1,14 @@
 {
+    "python.condaPath": "C:\\Users\\emres\\anaconda3",
+    "version": "0.2.0",
     "configurations": [
+
         {
-            "name": "Docker: Python - Flask",
-            "type": "docker",
+            "name": "Python - Flask",
+            "type": "python",
             "request": "launch",
-            "preLaunchTask": "docker-run: debug",
-            "python": {
-                "pathMappings": [
-                    {
-                        "localRoot": "${workspaceFolder}",
-                        "remoteRoot": "/app"
-                    }
-                ],
-                "projectType": "flask"
-            }
+            "program":"${file}",
+            "console":"integratedTerminal"
         }
     ]
 }

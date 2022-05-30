@@ -3,18 +3,19 @@ from flask import Flask, render_template, request, redirect, url_for, send_from_
 app = Flask(__name__)
 
 
-@app.route('/')
-def index():
-   print('Request for index page received')
-   return render_template('index.html')
+#to display the connection status
+@app.route('/', methods=['GET'])
+def handle_call():
+    return "Successfully Connected"
 
-@app.route('/favicon.ico')
-def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'static'),
-                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
+#the get method. when we call this, it just return the text "Hey!! I'm the fact you got!!!"
+@app.route('/getfact', methods=['GET'])
+def get_fact():
+    return "Hey!! I'm the fact you got!!!"
 
-@app.route('/test/<array>', methods=['POST'])
-def test(array):
+@app.route('/test', methods=['POST'])
+def test():
+    array = request.form.get('array')
     return "Test complete."
 
 
