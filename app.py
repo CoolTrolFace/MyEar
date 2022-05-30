@@ -12,9 +12,8 @@ def handle_call():
 
 @app.route('/getdata', methods=['POST'])
 def getdata():
-    json_string=request.get_json()
-    data = base64.b64decode(json_string)
-    print("Data "+str(data))
+    data = request.form
+    print("Data "+data['data'])
     return "Data received"
 
 
