@@ -12,8 +12,9 @@ def handle_call():
 
 @app.route('/getdata', methods=['POST'])
 def getdata():
-    data = request.form
-    print("Data "+data['data'])
+    json_data = request.json
+    val = json_data["data"]
+    print("Data "+val)
     return "Data received"
 
 
