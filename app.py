@@ -16,7 +16,7 @@ def get_fact():
 @app.route('/test', methods=['POST'])
 def test():
     array = request.form.get('array')
-    return "Test complete."
+    return array
 
 
 if __name__ == '__main__':
