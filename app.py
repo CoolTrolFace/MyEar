@@ -1,5 +1,6 @@
 from datetime import datetime
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
+import base64
 app = Flask(__name__)
 
 
@@ -8,16 +9,13 @@ app = Flask(__name__)
 def handle_call():
     return "Successfully Connected"
 
-#the get method. when we call this, it just return the text "Hey!! I'm the fact you got!!!"
-@app.route('/getfact', methods=['GET'])
-def get_fact():
-    return "Hey!! I'm the fact you got!!!"
 
-@app.route('/test', methods=['POST'])
-def test():
+@app.route('/getdata', methods=['POST'])
+def getdata():
     json_string=request.get_json()
-    print("JSON String "+str(json_string))
-    return str(json_string)
+    data = base64.b64decode(json_string)
+    print("Data "+str(data))
+    return "Data received"
 
 
 if __name__ == '__main__':
