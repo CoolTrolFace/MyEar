@@ -31,5 +31,8 @@
         ".vscode{,/**}"
     ],
     "appService.defaultWebAppToDeploy": "/subscriptions/62ad90d1-773f-49e6-8a88-11ca773f760c/microsoft.web/sites/subscriptions/62ad90d1-773f-49e6-8a88-11ca773f760c/resourceGroups/myear-python-web/providers/Microsoft.Web/sites/myear",
-    "appService.deploySubpath": "."
+    "appService.deploySubpath": ".",
+    "files.associations": {
+        "python.defaultInterpreterPath": "c:/Users/emres/Desktop/dersler/proje/msdocs-python-flask-webapp-quickstart/.venv/Scripts/python.exe"
+    }
 }
