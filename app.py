@@ -1,8 +1,9 @@
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 from tensorflow.keras.models import load_model 
 import numpy as np
 import librosa
 from pickle import load
-import os
 import wave
 import time
 from datetime import datetime
@@ -20,7 +21,6 @@ RECORD_SECONDS = 3
 WAVE_OUTPUT_FILENAME = "output.wav"
 
 
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 model = load_model('classifier.h5', compile = False) #calling pre-trained model ready
 model.load_weights('classifier_weights') #calling the weigths ready
 tran = load(open('tran.pkl', 'rb')) #tensorflow model saved in a pickle file
