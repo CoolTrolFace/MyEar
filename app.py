@@ -1,5 +1,3 @@
-from tensorflow.keras.models import load_model 
-import numpy as np
 from pickle import load
 import wave
 import time

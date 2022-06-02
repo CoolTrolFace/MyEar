@@ -2,7 +2,6 @@ from tensorflow.keras.models import load_model
 import numpy as np
 import librosa
 from pickle import load
-import pyaudio
 import wave
 import time
 from datetime import datetime
@@ -36,12 +35,10 @@ def getdata():
     json_data = request.json
     val = json_data["data"]
 
-    p = pyaudio.PyAudio()
-    p.terminate()
 
     #a = write(WAVE_OUTPUT_FILENAME, RESPEAKER_RATE, val)
     wf = wave.open(WAVE_OUTPUT_FILENAME, 'wb') #opens the filestream obtained from GET request and converted into .wav
-    wf.setsampwidth(p.get_sample_size(p.get_format_from_width(RESPEAKER_WIDTH))) #because the trained dataset objects have those values
+    wf.setsampwidth(2) #because the trained dataset objects have those values
     wf.setframerate(RESPEAKER_RATE)#because the trained dataset objects have those values
     wf.writeframes(b''.join(val)) # audio frame value (basically sample rate)
     wf.close
